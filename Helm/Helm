@@ -1,0 +1,52 @@
+The Helm package manager for Kubernetes.
+Helm works like a package manager because it can discover, install, upgrade and uninstall software on a Kubernetes cluster.
+It makes it easier to package and deploy software on a Kubernetes cluster using app definitions called charts. (OR) Helm uses a packaging format called charts.
+A chart is a package that can be shared and reused, which contains an application Kubernetes resource definitions (YAML files).
+A chart is a collection of files that describe a related set of Kubernetes resources.
+Helm keeps track of the charts it installs on your Kubernetes cluster by adding labels to the objects created.
+These labels look like app.kubernetes.io/managed-by=Helm and app.kubernetes.io/instance: myapp.
+
+[Concepts]
+Chart - is a package in Helm. It has a name, and contains a set of Kubernetes resource definitions that are used to deploy your application.
+Repository - is an online collection of charts. It has a URL. You can search, download and install charts from a repository.
+Release - is an instance or a deployment of a chart. When you perform a helm install command, you are creating a new release of that chart on your Kubernetes cluster.
+
+[Structure]
+CHART_NAME
+     |
+     |---> .helmignore
+     |---> Chart.yaml												   # meta info about the chart  
+     |---> charts
+     |---> index.yaml 
+     |---> helm_vars
+     |     |--- .sops.yaml
+     |     |--- secrets.yaml
+     |     |--- values.yaml 
+     |---> templates
+     |     |--- NOTES.txt
+     |     |--- _helpers.tpl
+     |     |--- deployment.yaml	
+     |     |--- hpa.yaml
+     |     |--- ingress.yaml
+     |     |--- service.yaml
+     |     |--- serviceaccount.yaml
+     |     |--- configmap.yaml
+     |     |--- secret.yaml 
+     |     |--- tests
+     |          |--- test-connection.yaml
+     |---> values.yaml													# values for the template files
+
+[v2 / v3]
+Helm v2 cli ---> Tiller ---> Kubernetes Cluster
+Helm v3 cli ---> Kubernetes Cluster
+Tiller, the server portion of Helm, typically runs inside of your Kubernetes cluster. But for development, it can also be run locally, and configured to talk to a remote Kubernetes cluster.
+Tiller acted as an intermediary between users and the Kubernetes API server, and handled role-based access control (RBAC) and the rendering of Helm charts for deployment to the cluster.
+Helm version 3 on Nov 13, Tiller was removed entirely and Helm version 3 now communicates directly with the Kubernetes API Server.
+Tiller was the server-side component which is used to maintain for helm release.
+It also stores all the release information in a config-map for every release in the same namespace where tiller is running. (OR) Helm 2 used config-maps to store release information. The release information was stored in the same namespace where tiller is deployed.
+Helm 3, secrets are used instead as the default storage driver. Also, they are stored in the same namespace where the release is deployed.
+Helm 2 chart has a specific file called 'requirements.yaml' where dependencies are added under the dependencies section. With Helm v3 this section are moved from requirements.yaml to Chart.yaml.
+Helm 2, if you deploy a chart in a non-existing namespace, it will create the namespace automatically. In Helm 3, need to create the namespace first in order to deploy a release in that namespace.
+Helm 2, If any changes happened through the helm chart yaml file when we use helm rollback command it will compare the current REVISION_NO and given REVISION_NO through the command and the changes will be applied.  
+Helm 2, If any changes happened through the kubernetes manifest yaml file (changes not happened through the helm chart yaml file) when we use helm rollback command does not detect any changes of kubernetes manifest yaml file.
+Helm 3, It will consider any changes happened through the helm chart yaml file and kubernetes manifest yaml file then it will compare the changes will be applied.

@@ -1,0 +1,57 @@
+Download the Helmfile binary file from 'https://github.com/roboll/helmfile/releases'.
+
+Rename the file from 'helmfile_linux_amd64' to 'helmfile'.
+$ mv helmfile_linux_amd64 helmfile
+
+Change the permission of the file and make it executable.
+$ chmod 777 helmfile
+
+Move the file from current location to '/usr/local/bin'.
+$ mv helmfile /usr/local/bin
+
+After moving the file verify the Helmfile installation by running the command.
+$ helmfile --version
+
+# Example 1
+Create a helmchart.
+$ helm create helloworld
+
+Let’s create a Helmfile for the helmchart we have just created.
+We are going to create helmfile.yaml at the same location where we have crated helloworld helmchart.
+#############################################
+$ vi helmfile.yaml
+---
+releases:
+
+  - name: helloworld
+    chart: ./helloworld
+    installed: true                                 # to install the helmchart using helmfile then must set this flag to 'true'
+#############################################
+Then save and close the file using ':wq!'.
+
+To create helloworld helmchart using helmfile let’s try by running the command.
+$ helmfile sync
+
+To verify helmchart.
+$ helm list -a
+
+#############################################
+$ vi helmfile.yaml
+---
+releases:
+
+  - name: helloworld
+    chart: ./helloworld
+    installed: false                               # to uninstall the helmchart using helmfile then must set this flag to 'false'
+#############################################
+
+After updating the helmfile need to run the following command.
+$ helmfile sync
+
+# Example 2 - GitHub Repository for installing helmchart using Helmfile
+Repository URL -> git+https://github.com/rahulwagh/helmchart@helloworld?ref=master&sparse=0
+                               |             |        |          |                |---------------> 
+                               |             |        |          |--------------------------------> 
+                               |             |        |------------------------------------------->
+                               |             |---------------------------------------------------->
+                               |------------------------------------------------------------------>    

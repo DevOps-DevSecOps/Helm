@@ -1,0 +1,6 @@
+The ENV variables set in ConfigMaps then refered in Deployment. In this case need to do first create ConfigMaps then should create a Deployment.
+If don't follow this order, created a Deployment first the Pods will be fail will say that ConfigMaps not found.
+While running Kubectl command we need to follow the order but in Helm will take care of that order.
+
+The only Deployment like Pods will be rollback to the previous version by using Kubectl.
+Helm Chart can completely rollback to the application state such as Deployment like Pods, Services, ...etc.

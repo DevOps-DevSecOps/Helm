@@ -1,0 +1,130 @@
+[Create]
+helm create CHART_NAME
+
+[Delete]
+helm delete RELEASE_NAME
+helm delete RELEASE_NAME RELEASE_NAME
+
+[Diff]
+helm diff revision RELEASE_NAME REVISION_NO REVISION_NO
+
+[Environment]
+helm env
+
+[Get]
+helm get all RELEASE_NAME
+helm get all RELEASE_NAME -n NAMESPACE_NAME
+helm get values RELEASE_NAME
+helm get values RELEASE_NAME -a
+helm get values RELEASE_NAME -n NAMESPACE_NAME
+
+[Help]
+helm --help
+
+[History]                                                                      # prints revisions
+helm history RELEASE_NAME                                                                  
+
+[Install]
+helm install CHART_NAME                                                        # v2
+helm install CHART_NAME --name RELEASE_NAME
+helm install CHART_NAME --generate-name
+helm install ./CHART_NAME --generate-name
+helm install ./CHART_NAME --dry-run --debug
+helm install ./CHART_NAME --dry-run --debug --generate-name
+helm install REPOSITORY_NAME/CHART_NAME --name RELEASE_NAME
+helm install RELEASE_NAME CHART_NAME                                           # v3  
+helm install RELEASE_NAME ./CHART_NAME
+helm install RELEASE_NAME CHART_NAME -f FILE_NAME.yaml
+helm install RELEASE_NAME CHART_NAME --repo REPOSITORY_HTTPS_URL
+helm install RELEASE_NAME CHART_NAME --set replicaCount=NO 
+helm install RELEASE_NAME CHART_NAME --dry-run --debug
+helm install RELEASE_NAME CHART_NAME -n NAMESPACE_NAME
+helm install RELEASE_NAME ./CHART_NAME -n NAMESPACE_NAME
+helm install RELEASE_NAME CHART_NAME --namespace NAMESPACE_NAME
+helm install RELEASE_NAME ./CHART_NAME -n NAMESPACE_NAME -f ./FOLDER_NAME/FILE_NAME.yaml
+helm install RELEASE_NAME ./CHART_NAME/ -n NAMESPACE_NAME -f FILE_NAME.yaml --create-namespace                      # create the release namespace if not present
+helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME
+helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME -f FILE_NAME.yaml
+
+[Lint]                                                                         # validating
+helm lint CHART_NAME
+helm lint ./CHART_NAME
+										    	
+[List]
+helm ls
+helm ls --all-namespaces
+helm ls --namespace NAMESPACE_NAME
+helm list
+helm list -a
+helm list --all
+helm list --all-namespaces
+helm list -n NAMESPACE_NAME
+helm list --namespace NAMESPACE_NAME
+
+[Rollback]
+helm rollback RELEASE_NAME REVISION_NO
+
+[Plugin]
+helm plugin install HTTPS_URL
+helm plugin list
+helm plugin update PLUGIN_NAME
+helm plugin uninstall PLUGIN_NAME
+
+[Pull]
+helm pull CHART_NAME
+
+[Repositories]
+helm repo add REPOSITORY_NAME REPOSITORY_HTTPS_URL                             # add a chart repository
+helm repo index CHART_NAME                                                     # will generate an index file is a yaml file called index.yaml inside the particular CHART_NAME directory and it contains some metadata about the package 
+helm repo update                                                               # update information of available charts locally from chart repositories 
+helm repo ls
+helm repo list                                                                 # list chart repositories 
+helm repo rm REPOSITORY_NAME                                                   # remove chart repositories
+helm repo remove REPOSITORY_NAME                                               # remove chart repositories
+helm repo remove REPOSITORY_NAME REPOSITORY_NAME                               # remove one or more chart repositories 
+
+[Registry]
+helm registry login
+helm registry logout
+helm registry login -u USER_NAME REGISTRY_HOSTNAME_IPADDRESS:REGISTRY_PORT
+helm registry logout REGISTRY_HOSTNAME_IPADDRESS:REGISTRY_PORT
+
+[Search]
+helm search hub CHART_NAME                                                     # search for charts in the Artifact Hub 
+helm search repo
+helm search repo REPOSITORY_NAME
+helm search repo CHART_NAME
+
+[Status]
+helm status RELEASE_NAME
+
+[Show]
+helm show all CHART_NAME                                                       # inspects a chart (directory, file, or URL) and displays all its content (values.yaml, Chart.yaml, README)
+helm show chart CHART_NAME                                                     # inspects a chart (directory, file, or URL) and displays the contents of the Chart.yaml file
+helm show chart REPOSITORY_NAME/CHART_NAME
+helm show readme CHART_NAME                                                    # inspects a chart (directory, file, or URL) and displays the contents of the README file
+helm show values CHART_NAME                                                    # inspects a chart (directory, file, or URL) and displays the contents of the values.yaml file  
+
+[Template]                                                                     # validating
+helm template CHART_NAME
+helm template ./CHART_NAME
+helm template ./CHART_NAME > FILE_NAME.yaml
+helm template RELEASE_NAME CHART_NAME
+helm template RELEASE_NAME ./CHART_NAME
+helm template RELEASE_NAME ./CHART_NAME > FILE_NAME.yaml
+helm template RELEASE_NAME ./CHART_NAME -f ./FOLDER_NAME/FILE_NAME.yaml
+helm template RELEASE_NAME ./CHART_NAME -f ./FOLDER_NAME/FILE_NAME.yaml > FILE_NAME.yaml
+
+[Uninstall]
+helm uninstall RELEASE_NAME
+
+[Upgrade]
+helm upgrade RELEASE_NAME .                                                    # . indicate that inside the particular CHART_NAME directory
+helm upgrade RELEASE_NAME CHART_NAME
+helm upgrade RELEASE_NAME ./CHART_NAME
+helm upgrade RELEASE_NAME ./CHART_NAME -f FILE_NAME.yaml
+helm upgrade RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME -f FILE_NAME.yaml
+
+[Version]
+helm version
+helm version --short
