@@ -1,0 +1,8 @@
+---
+releases:
+- name: backend                                             # Name of the Chart
+  chart: charts/backend                                     # CHART_NAME (backend) inside the folder (charts)
+  values:
+  - charts/backend/values-staging.yaml                      # custom values file for different environments
+  secrets:
+  - charts/backend/secrets-staging.yaml                     # custom secrets file
