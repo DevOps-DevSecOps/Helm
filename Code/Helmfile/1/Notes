@@ -1,1 +1,4 @@
 The Helmfile (helmfile.yaml) and Helm Chart (backend) inside the folder (charts) must be in the same location path of directory.
+
+We can deploy the Helm Chart (backend) by running the command.
+$ helmfile sync
