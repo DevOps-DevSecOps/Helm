@@ -2,3 +2,6 @@ The Helmfile (helmfile.yaml) and Helm Chart (backend) inside the folder (charts)
 
 We can deploy the Helm Chart (backend) by running the command.
 $ helmfile sync
+
+We can deploy the Helm Chart (backend) using multiple Environments to use the (--environment/-e) option by running the command.
+$ helmfile -e staging sync
