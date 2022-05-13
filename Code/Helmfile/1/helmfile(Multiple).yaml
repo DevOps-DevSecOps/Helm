@@ -1,0 +1,25 @@
+environments:
+  development:
+  staging:
+  production:
+
+releases:
+- name: backend
+  chart: charts/backend
+  values:
+  - charts/backend/values-{{ .Environment.Name }}.yaml
+  secrets:
+  - charts/backend/secrets-{{ .Environment.Name }}.yaml
+
+- name: frontend
+  chart: charts/frontend
+  values:
+  - charts/frontend/values-{{ .Environment.Name }}.yaml
+  secrets:
+  - charts/frontend/secrets-{{ .Environment.Name }}.yaml
+
+- name: prometheus
+  chart: stable/prometheus
+  version: 11.0.4
+  values:
+  - charts/prometheus/values-{{ .Environment.Name }}.yaml
