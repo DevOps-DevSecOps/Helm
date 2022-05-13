@@ -1,0 +1,12 @@
+environments:
+  development:
+  staging:
+  production:
+
+releases:
+- name: backend
+  chart: charts/backend
+  values:
+  - charts/backend/values-{{ .Environment.Name }}.yaml
+  secrets:
+  - charts/backend/secrets-{{ .Environment.Name }}.yaml
