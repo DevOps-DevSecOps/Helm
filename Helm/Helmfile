@@ -13,3 +13,10 @@ $ mv helmfile /usr/local/bin
 
 After moving the file verify the Helmfile installation by running the command.
 $ helmfile --version
+
+[Commands]
+helmfile --version
+
+helmfile repos                              # to add the repository to instance
+
+helmfile sync                               # to install/uninstall of Helm Charts
