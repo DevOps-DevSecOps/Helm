@@ -1,5 +1,7 @@
 create a Helm Chart
-$ helm create hellworld
+$ helm create helloworld
+$ helm create helloworld1
+$ helm create helloworld2
 
 [Repository URL]
 git+https://github.com/rahulwagh/helmchart@helloworld?ref=master&sparse=0
