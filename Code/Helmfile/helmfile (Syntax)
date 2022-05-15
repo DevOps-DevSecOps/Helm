@@ -1,0 +1,8 @@
+● name
+It is a name of a release, we can name is whatever we like.
+
+● chart
+It tells helmfile where a base Helm chart is located.
+
+● values
+It like to inject some values by using different values YAML file.
