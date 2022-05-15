@@ -1,4 +1,6 @@
 Helmfile is a declarative specification for deploying several Helm charts.
+Helmfile name should be by default is "helmfile.yaml".
+Helmfile (helmfile.yaml) and Helm Charts must be in the same location path of directory.
 
 Download the Helmfile binary file from 'https://github.com/roboll/helmfile/releases'.
 
