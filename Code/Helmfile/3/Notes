@@ -1,2 +1,11 @@
 create a Helm Chart
 $ helm create hellworld
+
+[Repository URL]
+git+https://github.com/rahulwagh/helmchart@helloworld?ref=master&sparse=0
+ |             |            |        |          |              |-----------------------> GitHub - Branch Name
+ |             |            |        |          |--------------------------------------> GitHub - Folder Name / Chart Name
+ |             |            |        |-------------------------------------------------> GitHub - Repository Name
+ |             |            |----------------------------------------------------------> GitHub - User Name
+ |             |-----------------------------------------------------------------------> Source Code Management (SCM) - GitHub
+ |-------------------------------------------------------------------------------------> Version Control System (VCS)
