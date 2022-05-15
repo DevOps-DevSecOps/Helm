@@ -6,3 +6,9 @@ It tells helmfile where a base Helm chart is located.
 
 ● values
 It like to inject some values by using different values YAML file.
+
+● installed: true
+To install the helmchart using helmfile then must set this flag to true.
+
+● installed: false
+To uninstall the helmchart using helmfile then must set this flag to false.
