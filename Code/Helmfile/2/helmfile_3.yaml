@@ -1,0 +1,5 @@
+releases:
+  - name: postgres
+    chart: ./charts/postgres
+    values:
+      - ./values/kanban-postgres.yaml
