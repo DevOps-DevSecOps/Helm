@@ -1,0 +1,15 @@
+releases:
+  - name: adminer
+    chart: ./charts/app
+    values:
+      - ./values/adminer.yaml
+
+  - name: kanban-app
+    chart: ./charts/app
+    values:
+      - ./values/kanban-app.yaml
+
+  - name: kanban-ui
+    chart: ./charts/app
+    values:
+      - ./values/kanban-ui.yaml
