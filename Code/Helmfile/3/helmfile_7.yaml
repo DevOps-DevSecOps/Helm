@@ -1,0 +1,9 @@
+environments:
+  default:
+  test:
+---
+
+releases:
+   - name: helloworld1
+     chart: ./helloworld1
+     installed: true
