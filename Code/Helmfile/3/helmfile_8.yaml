@@ -1,0 +1,10 @@
+environments:
+  production:
+    values:
+    - production.yaml
+
+---
+releases:
+  - name: helloworld1
+    chart: ./helloworld1
+    installed: true
