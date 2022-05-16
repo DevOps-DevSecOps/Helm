@@ -1,9 +1,9 @@
 environments:
   default:
-  test:
----
+  test:                                 # deploying Helm Chart in test environment
 
+---
 releases:
-   - name: helloworld1
-     chart: ./helloworld1
-     installed: true
+  - name: helloworld1
+    chart: ./helloworld1
+    installed: true
