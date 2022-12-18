@@ -4,6 +4,7 @@ helm create CHART_NAME
 [Delete]
 helm delete RELEASE_NAME
 helm delete RELEASE_NAME RELEASE_NAME
+helm delete RELEASE_NAME --purge
 
 [Diff]
 helm diff revision RELEASE_NAME REVISION_NO REVISION_NO
