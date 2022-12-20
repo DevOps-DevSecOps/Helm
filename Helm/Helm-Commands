@@ -33,6 +33,7 @@ helm install ./CHART_NAME --generate-name
 helm install ./CHART_NAME --dry-run --debug
 helm install ./CHART_NAME --dry-run --debug --generate-name
 helm install REPOSITORY_NAME/CHART_NAME --name RELEASE_NAME
+helm install REPOSITORY_NAME/CHART_NAME --name RELEASE_NAME --namespace NAMESPACE_NAME
 helm install RELEASE_NAME CHART_NAME                                           # v3  
 helm install RELEASE_NAME ./CHART_NAME
 helm install RELEASE_NAME CHART_NAME -f FILE_NAME.yaml
