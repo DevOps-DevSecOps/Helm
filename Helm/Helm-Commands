@@ -48,6 +48,7 @@ helm install RELEASE_NAME ./CHART_NAME -n NAMESPACE_NAME -f ./FOLDER_NAME/FILE_N
 helm install RELEASE_NAME ./CHART_NAME/ -n NAMESPACE_NAME -f FILE_NAME.yaml --create-namespace                      # create the release namespace if not present
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME -n NAMESPACE_NAME
+helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME -n NAMESPACE_NAME --set replicaCount=NO --kube-context=CONTEXT_NAME
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME -f FILE_NAME.yaml
 
 [Lint]                                                                         # validating
