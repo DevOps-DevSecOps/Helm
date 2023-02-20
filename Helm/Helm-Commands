@@ -122,6 +122,7 @@ helm template RELEASE_NAME ./CHART_NAME -f ./FOLDER_NAME/FILE_NAME.yaml > FILE_N
 
 [Uninstall]
 helm uninstall RELEASE_NAME
+helm uninstall RELEASE_NAME -n NAMESPACE_NAME
 
 [Upgrade]
 helm upgrade RELEASE_NAME .                                                    # . indicate that inside the particular CHART_NAME directory
