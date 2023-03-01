@@ -8,3 +8,4 @@ helm repo add elastic https://helm.elastic.co
 
 [Install]
 helm install elasticsearch elastic/elasticsearch -f values.yaml
+helm install --name nginx-ingress-controller stable/nginx-ingress
