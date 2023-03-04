@@ -50,6 +50,7 @@ helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME -f FILE_NAME.yaml
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME -n NAMESPACE_NAME
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME -n NAMESPACE_NAME --set replicaCount=NO --kube-context=CONTEXT_NAME
+helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME -n NAMESPACE_NAME --values /FOLDER_NAME/FILE_NAME.yaml
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME -f FILE_NAME.yaml
 
@@ -115,6 +116,7 @@ helm show chart REPOSITORY_NAME/CHART_NAME
 helm show readme CHART_NAME                                                    # inspects a chart (directory, file, or URL) and displays the contents of the README file
 helm show values CHART_NAME                                                    # inspects a chart (directory, file, or URL) and displays the contents of the values.yaml file  
 helm show values REPOSITORY_NAME/CHART_NAME
+helm show values REPOSITORY_NAME/CHART_NAME > /FOLDER_NAME/FILE_NAME.yaml
 
 [Template]                                                                     # validating
 helm template CHART_NAME
