@@ -21,6 +21,7 @@ helm get values RELEASE_NAME -n NAMESPACE_NAME
 
 [Help]
 helm --help
+helm install --help
 
 [History]                                                                      # prints revisions
 helm history RELEASE_NAME                                                                  
