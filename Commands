@@ -1,0 +1,3 @@
+$ helm install --help
+--create-namespace                               create the release namespace if not present
+-f, --values strings                             specify values in a YAML file or a URL (can specify multiple)
