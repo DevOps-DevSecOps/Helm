@@ -60,9 +60,10 @@ helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME 
 helm inspect values REPOSITORY_NAME/CHART_NAME                                 
 
 [Lint]                                                                         # validating
+helm lint .                                                                    # . indicates that currently inside a chart directory
 helm lint CHART_NAME
 helm lint ./CHART_NAME
-										    	
+							    	
 [List]
 helm ls
 helm ls --all-namespaces
