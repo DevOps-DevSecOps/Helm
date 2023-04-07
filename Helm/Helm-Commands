@@ -1,5 +1,5 @@
 [Create]
-helm create CHART_NAME
+helm create CHART_NAME                                                                      # create a new chart with the given name
 
 [Delete]
 helm delete RELEASE_NAME
