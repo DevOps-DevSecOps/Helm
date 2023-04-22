@@ -15,14 +15,14 @@ Release - is an instance or a deployment of a chart. When you perform a helm ins
 CHART_NAME
      |
      |---> .helmignore
-     |---> Chart.yaml												   # meta info about the chart  
-     |---> charts
+     |---> Chart.yaml											# metadata info about the chart, such as name, version, etc  
+     |---> charts                                                          # manually managed chart dependencies can placed in directory
      |---> index.yaml 
      |---> helm_vars
      |     |--- .sops.yaml
      |     |--- secrets.yaml
      |     |--- values.yaml 
-     |---> templates
+     |---> templates                                                       # directory contain template files like to Kubernetes YAML
      |     |--- NOTES.txt
      |     |--- _helpers.tpl
      |     |--- deployment.yaml	
@@ -34,7 +34,10 @@ CHART_NAME
      |     |--- secret.yaml 
      |     |--- tests
      |          |--- test-connection.yaml
-     |---> values.yaml													# values for the template files
+     |---> values.yaml											# default configuration values for the chart template files
+
+[.helmignore]
+It will ignore all the files that match the pattern specified in the .helmignore file.
 
 [v2 / v3]
 Helm v2 cli ---> Tiller ---> Kubernetes Cluster
