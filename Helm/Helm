@@ -15,7 +15,7 @@ Release - is an instance or a deployment of a chart. When you perform a helm ins
 CHART_NAME
      |
      |---> .helmignore
-     |---> Chart.yaml											# metadata info about the chart, such as name, version, etc  
+     |---> Chart.yaml                                                      # metadata info about the chart, such as name, version, etc  
      |---> charts                                                          # manually managed chart dependencies can placed in directory
      |---> index.yaml 
      |---> helm_vars
@@ -34,7 +34,7 @@ CHART_NAME
      |     |--- secret.yaml 
      |     |--- tests
      |          |--- test-connection.yaml
-     |---> values.yaml											# default configuration values for the chart template files
+     |---> values.yaml                                                    # default configuration values for the chart template files
 
 [.helmignore]
 It will ignore all the files that match the pattern specified in the .helmignore file.
