@@ -1,2 +1,2 @@
 [Template]
-The 'helm template' command convert/render chart templates locally and display the output.
+The command convert/render chart templates locally and display the output.
