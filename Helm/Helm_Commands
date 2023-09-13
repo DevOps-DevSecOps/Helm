@@ -16,3 +16,4 @@ helm show values ingress-nginx/ingress-nginx > /FOLDER_NAME/values.yaml
 
 [Template]
 helm template RELEASE_NAME ./CHART_NAME/ -f ./CHART_FOLDER_NAME/values-dev.yaml
+helm template RELEASE_NAME ./CHART_NAME/ -f ./CHART_FOLDER_NAME/values-dev.yaml > dev.yaml
