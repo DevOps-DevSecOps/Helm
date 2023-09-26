@@ -6,7 +6,7 @@ Suppose some changes happened in Deployment, Services, ConfigMaps, HPA using Kub
 After certain time the issue came resolve upto 2 OR 3 days meanwhile development team say rollitback/rollout to previous version, so only the Deployment like Pods will be rollback to previous version then Services, ConfigMaps, HPA, .. etc will not be rollback.
 Helm Chart can completely rollback the entire application state such as Deployment like Pods, Services, ConfigMaps, HPA, ...etc.
 
-Improved upgrade strategy: 3 way strategic merge patches in Helm3.
+Improved upgrade strategy: 2 way strategic merge patches in Helm2 vs 3 way strategic merge patches in Helm3.
 Suppose i have an scenario to explain
 helm install RELEASE_NAME ./CHART_NAME 
 $ helm install Web_App ./web-app
@@ -18,3 +18,10 @@ helm rollback RELEASE_NAME
 $ helm rollback Web_App
 Helm2, it never check status of Kubernetes objects in cluster, its only check the change happened through Helm Chart. The replica count will be 3 only.
 Helm3, it check and consider both changes of Kubernetes objects in cluster using manifest YAML files and also Helm Chart YAML files later it gone a apply all the changes. The replica count will be 0 now, if rollback to previous version then replica count will be 3. 
+
+Helm2 - Kubernetes Namespace
+I deployed an application by using Helm Chart YAML files with specific RELEASE_NAME (RELEASE_NAME = wordpress) in default Kubernetes Namespace. 
+So again i want to use the same RELEASE_NAME (RELEASE_NAME = wordpress) in different Kubernetes Namespaces it will not work means that it can't reuse the same RELEASE_NAME (RELEASE_NAME = wordpress) in different Namespaces Kubernetes cluster.
+Helm3 - Kubernetes Namespace
+I deployed an application by using Helm Chart YAML files with specific RELEASE_NAME (RELEASE_NAME = wordpress) in default Kubernetes Namespace.
+So it work here and again we can reuse the same RELEASE_NAME (RELEASE_NAME = wordpress) in different Namespaces Kubernetes cluster.
