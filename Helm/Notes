@@ -25,3 +25,11 @@ So again i want to use the same RELEASE_NAME (RELEASE_NAME = wordpress) in diffe
 Helm3 - Kubernetes Namespace
 I deployed an application by using Helm Chart YAML files with specific RELEASE_NAME (RELEASE_NAME = wordpress) in default Kubernetes Namespace.
 So it work here and again we can reuse the same RELEASE_NAME (RELEASE_NAME = wordpress) in different Namespaces Kubernetes cluster.
+
+Helm2 - RELEASE_NAME
+When using helm install command the RELEASE_NAME is not mention/ignored, its generate random RELEASE_NAME.
+In other way to generate random RELEASE_NAME using flags like '--generate-name'.
+We can specify the custom RELEASE_NAME using flags like '--name' RELEASE_NAME.
+Helm3 - RELEASE_NAME 
+When using helm install command must and should specify the RELEASE_NAME.
+So with out RELEASE_NAME the helm install command won't be execute. 
