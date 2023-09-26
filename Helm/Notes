@@ -5,3 +5,16 @@ While running Kubectl command we need to follow the order but in Helm will take 
 Suppose some changes happened in Deployment, Services, ConfigMaps, HPA using Kubernetes YAML files OR kubectl commands later this changes applied in Kubernetes cluster by using Kubernetes commands not with Helm commands.
 After certain time the issue came resolve upto 2 OR 3 days meanwhile development team say rollitback/rollout to previous version, so only the Deployment like Pods will be rollback to previous version then Services, ConfigMaps, HPA, .. etc will not be rollback.
 Helm Chart can completely rollback the entire application state such as Deployment like Pods, Services, ConfigMaps, HPA, ...etc.
+
+Improved upgrade strategy: 3 way strategic merge patches in Helm3.
+Suppose i have an scenario to explain
+helm install RELEASE_NAME ./CHART_NAME 
+$ helm install Web_App ./web-app
+In a values.yaml file replica count will be 3.
+kubectl scale deployment/DEPLOYMENT_NAME --replicas=NO
+$ kubectl scale deployment/Web_App --replicas=0
+Developer change the replica count from 3 to 0 by using kubectl command.
+helm rollback RELEASE_NAME
+$ helm rollback Web_App
+Helm2, it never check status of Kubernetes objects in cluster, its only check the change happened through Helm Chart. The replica count will be 3 only.
+Helm3, it check and consider both changes of Kubernetes objects in cluster using manifest YAML files and also Helm Chart YAML files later it gone a apply all the changes. The replica count will be 0 now, if rollback to previous version then replica count will be 3. 
