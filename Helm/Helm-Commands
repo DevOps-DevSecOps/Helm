@@ -1,7 +1,7 @@
 [Create]
-helm create CHART_NAME                                                                      # create a new chart with the given name
+helm create CHART_NAME                                                          # create a new chart with the given name
 
-[Delete]
+[Delete]                                                                        # Helm v2 - alternatively use Helm v3 uninstall
 helm delete RELEASE_NAME
 helm delete RELEASE_NAME RELEASE_NAME
 helm delete RELEASE_NAME --purge
@@ -27,7 +27,7 @@ helm install --help
 helm history RELEASE_NAME                                                                  
 
 [Install]
-helm install CHART_NAME                                                        # v2
+helm install CHART_NAME                                                        # Helm v2
 helm install CHART_NAME --name RELEASE_NAME
 helm install CHART_NAME --generate-name
 helm install ./CHART_NAME --generate-name
@@ -36,7 +36,7 @@ helm install ./CHART_NAME --dry-run --debug --generate-name
 helm install REPOSITORY_NAME/CHART_NAME --generate-name
 helm install REPOSITORY_NAME/CHART_NAME --name RELEASE_NAME
 helm install REPOSITORY_NAME/CHART_NAME --name RELEASE_NAME --namespace NAMESPACE_NAME
-helm install RELEASE_NAME .                                                    # v3
+helm install RELEASE_NAME .                                                    # Helm v3
 helm install RELEASE_NAME CHART_NAME                                             
 helm install RELEASE_NAME ./CHART_NAME
 helm install RELEASE_NAME CHART_NAME -f FILE_NAME.yaml
@@ -56,7 +56,7 @@ helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME -n NAMESPACE_NAME --values 
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME
 helm install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME -f FILE_NAME.yaml
 
-[Inspect]                                                                      Helm v2 
+[Inspect]                                                                      # Helm v2 - alternatively Helm v3 show
 helm inspect values REPOSITORY_NAME/CHART_NAME                                 
 
 [Lint]                                                                         # validating
@@ -112,7 +112,7 @@ helm search repo CHART_NAME
 [Status]
 helm status RELEASE_NAME
 
-[Show]                                                                         Helm v3
+[Show]                                                                         # Helm v3
 helm show all CHART_NAME                                                       # inspects a chart (directory, file, or URL) and displays all its content (values.yaml, Chart.yaml, README)
 helm show chart CHART_NAME                                                     # inspects a chart (directory, file, or URL) and displays the contents of the Chart.yaml file
 helm show chart REPOSITORY_NAME/CHART_NAME
