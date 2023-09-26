@@ -2,5 +2,6 @@ The ENV variables set in ConfigMaps then refered in Deployment. In this case nee
 If don't follow this order, created a Deployment first the Pods will be fail will say that ConfigMaps not found.
 While running Kubectl command we need to follow the order but in Helm will take care of that order.
 
-The only Deployment like Pods will be rollback to the previous version by using Kubectl.
-Helm Chart can completely rollback to the application state such as Deployment like Pods, Services, ...etc.
+Suppose some changes happened in Deployment, Services, ConfigMaps, HPA using Kubernetes YAML files OR kubectl commands later this changes applied in Kubernetes cluster by using Kubernetes commands not with Helm commands.
+After certain time the issue came resolve upto 2 OR 3 days meanwhile development team say rollitback/rollout to previous version, so only the Deployment like Pods will be rollback to previous version then Services, ConfigMaps, HPA, .. etc will not be rollback.
+Helm Chart can completely rollback the entire application state such as Deployment like Pods, Services, ConfigMaps, HPA, ...etc.
