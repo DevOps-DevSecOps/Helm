@@ -1,2 +1,10 @@
+[Install]
+This is first command used to install/deploy an chart. 
+
+[Upgrade]
+The command used to release to a new version of a chart.
+The helm install command is not for used after any changes happened in chart YAML file.
+The helm upgrade command is used after any changes happened in chart YAML file.
+
 [Template]
 The command convert/render chart templates locally and display the output.
