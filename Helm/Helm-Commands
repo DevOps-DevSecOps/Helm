@@ -20,6 +20,8 @@ helm get values RELEASE_NAME -a
 helm get values RELEASE_NAME -n NAMESPACE_NAME
 
 [Help]
+helm -h
+helm install -h
 helm --help
 helm install --help
 
