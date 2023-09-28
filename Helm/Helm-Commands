@@ -123,6 +123,7 @@ helm show values REPOSITORY_NAME/CHART_NAME > /FOLDER_NAME/FILE_NAME.yaml
 
 [Template]                                                                     # validating
 helm template CHART_NAME
+helm template CHART_NAME/ --debug
 helm template ./CHART_NAME
 helm template ./CHART_NAME > FILE_NAME.yaml
 helm template RELEASE_NAME CHART_NAME
