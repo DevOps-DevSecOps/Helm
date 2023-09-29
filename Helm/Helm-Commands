@@ -44,6 +44,7 @@ helm install RELEASE_NAME ./CHART_NAME
 helm install RELEASE_NAME CHART_NAME -f FILE_NAME.yaml
 helm install RELEASE_NAME CHART_NAME --repo REPOSITORY_HTTPS_URL
 helm install RELEASE_NAME CHART_NAME --set replicaCount=NO 
+helm install RELEASE_NAME ./CHART_NAME/ --set service.type=SERVICE_TYPES_NAME
 helm install RELEASE_NAME CHART_NAME --dry-run --debug
 helm install RELEASE_NAME CHART_NAME -n NAMESPACE_NAME
 helm install RELEASE_NAME ./CHART_NAME -n NAMESPACE_NAME
