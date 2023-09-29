@@ -67,6 +67,7 @@ helm install RELEASE_NAME CHART_NAME --set replicaCount=NO
 helm install RELEASE_NAME CHART_NAME --set service.type=SERVICE_TYPES_NAME
 helm install RELEASE_NAME ./CHART_NAME/ --set service.type=SERVICE_TYPES_NAME
 helm install RELEASE_NAME CHART_NAME --dry-run --debug
+helm install RELEASE_NAME ./CHART_NAME --dry-run --debug
 helm install RELEASE_NAME CHART_NAME -n NAMESPACE_NAME
 helm install RELEASE_NAME ./CHART_NAME -n NAMESPACE_NAME
 helm install RELEASE_NAME CHART_NAME --namespace NAMESPACE_NAME
