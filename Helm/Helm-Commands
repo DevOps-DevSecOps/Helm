@@ -107,6 +107,13 @@ helm list --namespace NAMESPACE_NAME
 [Rollback]
 helm rollback RELEASE_NAME REVISION_NO
 
+[Package]
+helm package CHART_NAME                                                        # packages a chart into a versioned chart archive file
+helm package CHART_NAME -d /FOLDER_NAME/                                       # location to write/save the chart. (default ".")
+helm package CHART_NAME --destination FOLDER_NAME/.
+helm package CHART_NAME --version NO.NO.NO                                     # set the version for the chart while archiving
+helm package CHART_NAME --version NO.NO.NO -d FOLDER_NAME
+
 [Plugin]
 helm plugin install HTTPS_URL
 helm plugin list
