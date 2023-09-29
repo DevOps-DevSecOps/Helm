@@ -1,5 +1,6 @@
 [Install]
 helm install --name nginx-ingress-controller stable/nginx-ingress                                   # v2
+helm install RELEASE_NAME ./CHART_NAME/ --set service.type=NodePort
 helm install elasticsearch elastic/elasticsearch -f values.yaml                                     # v3
 helm install ingress ingress-nginx/ingress-nginx -n NAMESPACE_NAME --values /FOLDER_NAME/values.yaml
 
