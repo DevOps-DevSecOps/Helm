@@ -1,5 +1,13 @@
 [Create]
-helm create CHART_NAME                                                          # create a new chart with the given name
+helm create CHART_NAME                                                          # create a new chart directory/folder with the given name
+
+[Dependency]
+helm dep build CHART_NAME
+helm dep list CHART_NAME
+helm dep update CHART_NAME
+helm dependency build CHART_NAME                                                # rebuild the charts directory based on the Chart.lock file
+helm dependency list CHART_NAME                                                 # list the dependencies for the given chart
+helm dependency update CHART_NAME                                               # update charts based on the contents of Chart.yaml
 
 [Delete]                                                                        # Helm v2 - alternatively use Helm v3 uninstall
 helm delete RELEASE_NAME
@@ -13,11 +21,20 @@ helm diff revision RELEASE_NAME REVISION_NO REVISION_NO
 helm env
 
 [Get]
-helm get all RELEASE_NAME
+helm get all RELEASE_NAME                                                       # download and prints a human readable collection of information for a named release
 helm get all RELEASE_NAME -n NAMESPACE_NAME
-helm get values RELEASE_NAME
+helm get hooks RELEASE_NAME                                                     # download all hooks for a named release
+helm get manifest RELEASE_NAME                                                  # download and fetches the generated manifest for a named release
+helm get metadata RELEASE_NAME
+helm get notes RELEASE_NAME
+helm get values RELEASE_NAME                                                    # download the values file for a named release
 helm get values RELEASE_NAME -a
+helm get values RELEASE_NAME --all
+helm get values RELEASE_NAME -o table
+helm get values RELEASE_NAME --output json
+helm get values RELEASE_NAME --output yaml
 helm get values RELEASE_NAME -n NAMESPACE_NAME
+helm get values RELEASE_NAME --namespace NAMESPACE_NAME
 
 [Help]
 helm -h
@@ -27,6 +44,9 @@ helm install --help
 
 [History]                                                                      # prints revisions
 helm history RELEASE_NAME                                                                  
+helm history RELEASE_NAME -o table
+helm history RELEASE_NAME -o json
+helm history RELEASE_NAME --output yaml
 
 [Install]
 helm install CHART_NAME                                                        # Helm v2
