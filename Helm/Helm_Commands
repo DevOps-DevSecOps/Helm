@@ -7,9 +7,10 @@ helm install ingress ingress-nginx/ingress-nginx -n NAMESPACE_NAME --values /FOL
 [Plugin]
 ● Diff
 helm plugin install https://github.com/databus23/helm-diff
+helm plugin update diff
 helm plugin uninstall diff
 helm diff -h
-helm diff upgrade RELEASE_NAME CHART_NAME --values /FOLDER_NAME/FILE_NAME.yaml                     # it co
+helm diff upgrade RELEASE_NAME CHART_NAME --values /FOLDER_NAME/FILE_NAME.yaml                     # it compare before and after the changes to values.yaml
 
 [Repositories]
 helm repo add bitnami https://charts.bitnami.com/bitnami
