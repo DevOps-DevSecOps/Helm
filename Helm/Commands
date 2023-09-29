@@ -1,6 +1,11 @@
 [Install]
 This is first command used to install/deploy an chart. 
 
+[History]
+It fetch release history.
+A default maximum of 256 revisions will be returned.
+Setting '--max' configures the maximum length of the revision list returned.
+
 [Upgrade]
 The command used to release to a new version of a chart.
 The helm install command is not for used after any changes happened in chart YAML file.
