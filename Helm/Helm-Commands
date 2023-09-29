@@ -64,6 +64,7 @@ helm install RELEASE_NAME ./CHART_NAME
 helm install RELEASE_NAME CHART_NAME -f FILE_NAME.yaml
 helm install RELEASE_NAME CHART_NAME --repo REPOSITORY_HTTPS_URL
 helm install RELEASE_NAME CHART_NAME --set replicaCount=NO 
+helm install RELEASE_NAME CHART_NAME --set service.type=SERVICE_TYPES_NAME
 helm install RELEASE_NAME ./CHART_NAME/ --set service.type=SERVICE_TYPES_NAME
 helm install RELEASE_NAME CHART_NAME --dry-run --debug
 helm install RELEASE_NAME CHART_NAME -n NAMESPACE_NAME
@@ -85,15 +86,20 @@ helm inspect values REPOSITORY_NAME/CHART_NAME
 [Lint]                                                                         # validating
 helm lint .                                                                    # . indicates that currently inside a chart directory
 helm lint CHART_NAME
+helm lint CHART_NAME --strict
 helm lint ./CHART_NAME
 							    	
 [List]
 helm ls
+helm ls -a                                                                     # show all releases
+helm ls --all
+helm ls -A
 helm ls --all-namespaces
 helm ls --namespace NAMESPACE_NAME
 helm list
 helm list -a
 helm list --all
+helm list -A                                                                   # list releases across all namespaces
 helm list --all-namespaces
 helm list -n NAMESPACE_NAME
 helm list --namespace NAMESPACE_NAME
