@@ -1,0 +1,7 @@
+$ helm repo add traefik https://helm.traefik.io/traefik
+
+$ helm repo update
+
+$ helm show values traefik/traefik > /tmp/values.yaml
+
+$ helm install --namespace=traefik traefik traefik/traefik --values=values.yaml
