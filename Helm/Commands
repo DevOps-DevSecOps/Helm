@@ -11,5 +11,11 @@ The command used to release to a new version of a chart.
 The helm install command is not for used after any changes happened in chart YAML file.
 The helm upgrade command is used after any changes happened in chart YAML file.
 
+[Package]
+It package a chart directory into a chart archive.
+It packages a chart into a versioned chart archive file.
+If a path is given, this will look at that path for a chart (which must contain a Chart.yaml file) and then package that directory.
+Versioned chart archives are used by Helm package repositories.
+
 [Template]
 The command convert/render chart templates locally and display the output.
