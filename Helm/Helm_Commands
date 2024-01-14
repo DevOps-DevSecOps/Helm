@@ -1,24 +1,32 @@
 [Install]
-helm install --name nginx-ingress-controller stable/nginx-ingress                                   # v2
-helm install RELEASE_NAME ./CHART_NAME/ --set service.type=NodePort                                 # v3
-helm install elasticsearch elastic/elasticsearch -f values.yaml                                     
-helm install ingress ingress-nginx/ingress-nginx -n NAMESPACE_NAME --values /FOLDER_NAME/values.yaml
+$ helm install --name nginx-ingress-controller stable/nginx-ingress                                   # v2
+$ helm install RELEASE_NAME ./CHART_NAME/ --set service.type=NodePort                                 # v3
+$ helm install elasticsearch elastic/elasticsearch -f values.yaml                                     
+$ helm install ingress ingress-nginx/ingress-nginx -n NAMESPACE_NAME --values /FOLDER_NAME/values.yaml
 
 [Plugin]
 ● Diff
-helm plugin install https://github.com/databus23/helm-diff
-helm plugin update diff
-helm plugin uninstall diff
-helm diff -h
-helm diff upgrade RELEASE_NAME CHART_NAME --values /FOLDER_NAME/FILE_NAME.yaml                     # it compare before and after the changes to values.yaml
+$ helm plugin install https://github.com/databus23/helm-diff
+$ helm plugin update diff
+$ helm plugin uninstall diff
+$ helm diff -h
+$ helm diff upgrade RELEASE_NAME CHART_NAME --values /FOLDER_NAME/FILE_NAME.yaml                     # it compare before and after the changes to values.yaml
 
 [Repositories]
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm repo add elastic https://helm.elastic.co
+$ helm repo add bitnami https://charts.bitnami.com/bitnami
+$ helm repo add elastic https://helm.elastic.co
+
+[Package]
+$ helm package test                                                         # chart name is test and it path is /opt
+Successfully packaged chart and saved it to: /opt/test-0.1.0.tgz
+$ helm package test --destination /home/
+Successfully packaged chart and saved it to: /home/test-0.1.0.tgz
+$ helm package test --destination /home/ --version 1.2.3
+Successfully packaged chart and saved it to: /home/test-1.2.3.tgz
 
 [Show]
-helm show values ingress-nginx/ingress-nginx > /FOLDER_NAME/values.yaml
+$ helm show values ingress-nginx/ingress-nginx > /FOLDER_NAME/values.yaml
 
 [Template]
-helm template RELEASE_NAME ./CHART_NAME/ -f ./CHART_FOLDER_NAME/values-dev.yaml
-helm template RELEASE_NAME ./CHART_NAME/ -f ./CHART_FOLDER_NAME/values-dev.yaml > dev.yaml                                  # render chart templates locally and display the output into Kubernetes YAML format
+$ helm template RELEASE_NAME ./CHART_NAME/ -f ./CHART_FOLDER_NAME/values-dev.yaml
+$ helm template RELEASE_NAME ./CHART_NAME/ -f ./CHART_FOLDER_NAME/values-dev.yaml > dev.yaml                                  # render chart templates locally and display the output into Kubernetes YAML format
