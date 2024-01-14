@@ -17,7 +17,7 @@ $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm repo add elastic https://helm.elastic.co
 
 [Package]
-$ helm package test                                                         # chart name is test and it path is /opt
+$ helm package test                                                         # chart name is test and the test chart located path is /opt directory/folder
 Successfully packaged chart and saved it to: /opt/test-0.1.0.tgz
 $ helm package test --destination /home/
 Successfully packaged chart and saved it to: /home/test-0.1.0.tgz
