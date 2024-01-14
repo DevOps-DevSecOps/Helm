@@ -113,6 +113,7 @@ helm rollback RELEASE_NAME REVISION_NO
 helm package CHART_NAME                                                        # packages a chart into a versioned chart archive file
 helm package CHART_NAME -d /FOLDER_NAME/                                       # location to write/save the chart. (default ".")
 helm package CHART_NAME --destination FOLDER_NAME/.
+helm package CHART_NAME --destination /FOLDER_NAME/ --version NO.NO.NO
 helm package CHART_NAME --version NO.NO.NO                                     # set the version for the chart while archiving
 helm package CHART_NAME --version NO.NO.NO -d FOLDER_NAME
 
