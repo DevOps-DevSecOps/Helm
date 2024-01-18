@@ -160,6 +160,9 @@ helm show values CHART_NAME                                                    #
 helm show values REPOSITORY_NAME/CHART_NAME
 helm show values REPOSITORY_NAME/CHART_NAME > /FOLDER_NAME/FILE_NAME.yaml
 
+[Test]
+helm test RELEASE_NAME
+
 [Template]                                                                     # validating
 helm template CHART_NAME
 helm template CHART_NAME/ --debug
