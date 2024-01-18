@@ -1,3 +1,5 @@
+################################--EXAMPLE_1--################################
+
 $ helm repo add traefik https://helm.traefik.io/traefik
 
 $ helm repo update
@@ -5,3 +7,19 @@ $ helm repo update
 $ helm show values traefik/traefik > /tmp/values.yaml
 
 $ helm install --namespace=traefik traefik traefik/traefik --values=values.yaml
+
+################################--EXAMPLE_2--################################
+
+$ helm repo add jfrog https://charts.jfrog.io
+
+$ helm repo update
+
+$ kubectl create namespace artifactory
+
+$ helm install my-artifactory-oss jfrog/artifactory-oss --version 107.71.10 --namespace artifactory
+
+################################--EXAMPLE_3--################################
+
+$ helm repo add bitnami https://charts.bitnami.com/bitnami
+
+$ helm install my-airflow bitnami/airflow --version 16.2.0
