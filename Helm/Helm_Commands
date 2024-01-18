@@ -24,6 +24,9 @@ Successfully packaged chart and saved it to: /home/test-0.1.0.tgz
 $ helm package test --destination /home/ --version 1.2.3
 Successfully packaged chart and saved it to: /home/test-1.2.3.tgz
 
+[Search]
+$ helm search repo nginx
+
 [Show]
 $ helm show values ingress-nginx/ingress-nginx > /FOLDER_NAME/values.yaml
 
