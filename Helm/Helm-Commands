@@ -124,7 +124,11 @@ helm plugin update PLUGIN_NAME
 helm plugin uninstall PLUGIN_NAME
 
 [Pull]
-helm pull CHART_NAME
+helm pull REPOSITORY_NAME/CHART_NAME --version NO.NO.NO
+helm pull CHART_NAME --version NO.NO.NO --repo REPOSITORY_HTTPS_URL
+helm pull CHART_NAME --version NO.NO.NO --repo REPOSITORY_HTTPS_URL --untar=true
+helm pull CHART_NAME --version NO.NO.NO --repo REPOSITORY_HTTPS_URL --untar=true --untardir FOLDER_NAME
+helm pull CHART_NAME --version NO.NO.NO --repo REPOSITORY_HTTPS_URL --untar=true --untardir /FOLDER_NAME
 
 [Repositories]
 helm repo add REPOSITORY_NAME REPOSITORY_HTTPS_URL                             # add a chart repository
