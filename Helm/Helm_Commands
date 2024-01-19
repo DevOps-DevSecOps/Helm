@@ -15,6 +15,7 @@ $ helm diff upgrade RELEASE_NAME CHART_NAME --values /FOLDER_NAME/FILE_NAME.yaml
 [Repositories]
 $ helm repo add bitnami https://charts.bitnami.com/bitnami
 $ helm repo add elastic https://helm.elastic.co
+$ helm repo remove bitnami
 
 [Package]
 $ helm package test                                                         # chart name is test and the test chart located path is /opt directory/folder
@@ -23,6 +24,12 @@ $ helm package test --destination /home/
 Successfully packaged chart and saved it to: /home/test-0.1.0.tgz
 $ helm package test --destination /home/ --version 1.2.3
 Successfully packaged chart and saved it to: /home/test-1.2.3.tgz
+
+[Pull]
+$ helm pull bitnami/nginx --version 15.8.1
+$ helm pull airflow --version 16.2.0 --repo https://charts.bitnami.com/bitnami
+$ helm pull airflow --version 16.2.0 --repo https://charts.bitnami.com/bitnami --untar=true
+$ helm pull airflow --version 16.2.0 --repo https://charts.bitnami.com/bitnami --untar=true --untardir /home/ubuntu/opt
 
 [Search]
 $ helm search repo nginx
