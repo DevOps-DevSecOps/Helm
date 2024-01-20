@@ -35,6 +35,12 @@ $ helm repo remove bitnami
 ################################--EXAMPLE_4--################################
 
 $ helm pull airflow --version 16.2.0 --repo https://charts.bitnami.com/bitnami
+
 $ helm pull airflow --version 16.2.0 --repo https://charts.bitnami.com/bitnami --untar=true
+
 Here we created an directory with name of 'opt' in '/home/ubuntu/' path.
 $ helm pull airflow --version 16.2.0 --repo https://charts.bitnami.com/bitnami --untar=true --untardir /home/ubuntu/opt
+
+################################--EXAMPLE_5--################################
+
+$
