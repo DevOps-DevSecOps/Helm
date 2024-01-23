@@ -43,4 +43,33 @@ $ helm pull airflow --version 16.2.0 --repo https://charts.bitnami.com/bitnami -
 
 ################################--EXAMPLE_5--################################
 
+$ helm repo add bitnami https://charts.bitnami.com/bitnami
+
+$ helm install my-nginx bitnami/nginx --version 15.9.0
+
+$ helm list
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS    CHART           APP VERSION
+my-nginx        default         1               2024-01-23 14:01:55.21643788 +0000 UTC  deployed  nginx-15.9.0    1.25.3     
+
+$ helm show values bitnami/nginx > values.yaml
+
+$ helm template my-nginx bitnami/nginx
+$ helm template my-nginx bitnami/nginx > file.yml
+
+$ kubectl get svc                                              
+NAME         TYPE           CLUSTER-IP     EXTERNAL-IP    PORT(S)        AGE
+my-nginx     LoadBalancer   10.97.243.43   10.97.243.43   80:32265/TCP   169m
+
+In values.yaml file, change 'type: LoadBalancer' to 'type: NodePort' in "service" resource block, then save and close the values.yaml file.
+
+$ helm upgrade my-nginx bitnami/nginx -f values.yaml
+
+$ kubectl get svc
+NAME         TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+my-nginx     NodePort    10.97.243.43   <none>        80:32265/TCP   172m
+
+$ helm ls
+NAME            NAMESPACE       REVISION        UPDATED                                 STATUS    CHART           APP VERSION
+my-nginx        default         2               2024-01-23 16:52:05.175000332 +0000 UTC deployed  nginx-15.9.0    1.25.3     
+
 $
