@@ -37,10 +37,9 @@ helm get values RELEASE_NAME -n NAMESPACE_NAME
 helm get values RELEASE_NAME --namespace NAMESPACE_NAME
 
 [Help]
+helm
 helm -h
-helm install -h
 helm --help
-helm install --help
 
 [History]                                                                      # prints revisions
 helm history RELEASE_NAME                                                                  
@@ -49,6 +48,8 @@ helm history RELEASE_NAME -o json
 helm history RELEASE_NAME --output yaml
 
 [Install]
+helm install -h                                                                # help for install
+helm install --help
 helm install CHART_NAME                                                        # Helm v2
 helm install CHART_NAME --name RELEASE_NAME
 helm install CHART_NAME --generate-name
@@ -110,7 +111,8 @@ helm list -n NAMESPACE_NAME
 helm list --namespace NAMESPACE_NAME
 
 [Rollback]
-helm rollback RELEASE_NAME REVISION_NO
+helm rollback RELEASE_NAME                                                     # rollback to the previous revision
+helm rollback RELEASE_NAME REVISION_NO                                         # rollback to a specific revision
 
 [Package]
 helm package CHART_NAME                                                        # packages a chart into a versioned chart archive file
@@ -206,6 +208,13 @@ helm upgrade --install RELEASE_NAME REPOSITORY_NAME/CHART_NAME
 helm upgrade --install RELEASE_NAME REPOSITORY_NAME/CHART_NAME -f FILE_NAME.yaml
 helm upgrade --install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME
 helm upgrade --install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME -f FILE_NAME.yaml
+helm upgrade --set KEY=VALUE RELEASE_NAME CHART_NAME
+helm upgrade --set KEY=VALUE RELEASE_NAME CHART_NAME --recreate-pods
+helm upgrade --set KEY=VALUE RELEASE_NAME REPOSITORY_NAME/CHART_NAME
+helm upgrade --set KEY=VALUE RELEASE_NAME REPOSITORY_NAME/CHART_NAME -f FILE_NAME.yaml
+helm upgrade --set KEY=VALUE RELEASE_NAME REPOSITORY_NAME/CHART_NAME -f FILE_NAME.yaml --recreate-pods
+helm upgrade --set KEY=VALUE RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME
+helm upgrade --set KEY=VALUE RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME -f FILE_NAME.yaml
 
 [Version]
 helm version
