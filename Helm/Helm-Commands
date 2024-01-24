@@ -93,7 +93,7 @@ helm lint CHART_NAME --strict
 helm lint ./CHART_NAME
 							    	
 [List]
-helm ls -h                                                                     # help for lists
+helm ls -h                                                                     # help for list
 helm ls
 helm ls -a                                                                     # show all releases
 helm ls --all
