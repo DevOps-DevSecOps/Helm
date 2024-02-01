@@ -204,6 +204,8 @@ helm upgrade -i RELEASE_NAME CHART_NAME
 helm upgrade -i RELEASE_NAME ./CHART_NAME                                      # if a release by this name doesn't already exist, run an install
 helm upgrade -i RELEASE_NAME ./CHART_NAME -f FILE_NAME.yaml
 helm upgrade --install RELEASE_NAME ./CHART_NAME
+helm upgrade --install --set image.tag=$BUILD_NUMBER RELEASE_NAME CHART_NAME --namespace NAMESPACE_NAME
+helm upgrade --install --set image.repository="REGISTRY_HOSTNAME_IPADDRESS:REGISTRY_PORT/IMAGE_NAME" --set image.tag="${VARIABLE_NAME}" RELEASE_NAME CHART_NAME/
 helm upgrade --install RELEASE_NAME REPOSITORY_NAME/CHART_NAME
 helm upgrade --install RELEASE_NAME REPOSITORY_NAME/CHART_NAME -f FILE_NAME.yaml
 helm upgrade --install RELEASE_NAME REPOSITORY_NAME/CHART_NAME --namespace NAMESPACE_NAME
